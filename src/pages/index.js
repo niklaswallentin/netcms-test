@@ -5,6 +5,12 @@ import Layout from "../components/Layout";
 import Img from "gatsby-image";
 
 export default class IndexPage extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      posts: []
+    };
+  }
   render() {
     const { data } = this.props;
     const { edges: posts } = data.allMarkdownRemark;
@@ -76,7 +82,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             image {
               childImageSharp {
-                sizes(maxWidth: 1280) {
+                sizes(maxWidth: 1020) {
                   ...GatsbyImageSharpSizes
                 }
               }
