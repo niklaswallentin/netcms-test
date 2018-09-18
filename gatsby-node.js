@@ -73,6 +73,8 @@ exports.createPages = ({ actions, graphql }) => {
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
+
+  // THIS PART FIXES FRONTMATTER SOURCE ISSUE FOR GATSBYCMS IMAGES
   const { frontmatter } = node;
   if (frontmatter) {
     const { image } = frontmatter;
